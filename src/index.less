@@ -1,0 +1,106 @@
+
+@input-height: 2em;
+@button-height: @input-height + 0.4;
+
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body, h1, h2, h3 {
+  font-weight: 300
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  .input-group {
+    input {
+      width: ~"calc(90% - 2px)";
+      float: left;
+      height: @input-height;
+      font-size: 1.02em;
+      &.disabled {
+        width: 100%;
+      }
+    }
+    button {
+      width: ~"calc(10% - 4px)";
+      height: @button-height;
+      font-size: 1.02em;
+      float: right;
+      background-color: darkgreen;
+      color: snow;
+      border: 1px solid #ddd;
+      &.orange {
+        background-color: darkorange;
+      }
+      &.blue {
+        background-color: darkcyan;
+      }
+      &.disabled {
+        display: none;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+    font-family: Lucida Grande;
+    font-size: 0.75em;
+
+    .direction {
+      min-width: 10em;
+      text-align: center;
+    }
+
+    .event {
+      min-width: 6em;
+      text-align: center;
+    }
+
+    thead {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+    }
+
+    tr {
+      td {
+        vertical-align: top;
+        padding-bottom: 0.5em;
+        &.multi-line {
+          word-break: break-all;
+        }
+        &.event {
+          font-style: italic;
+        }
+        &.direction {
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  .event-log {
+    position: fixed;
+    bottom: 0;
+    top: 115px;
+    overflow-y: scroll;
+  }
+}
