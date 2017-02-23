@@ -1,5 +1,6 @@
 import angular from 'angular';
 import 'angular-ui-router';
+import "file-loader?name=lib/jschannel.js!./lib/jschannel.js";
 
 import routesConfig from './routes';
 

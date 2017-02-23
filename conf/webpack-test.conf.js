@@ -10,7 +10,7 @@ module.exports = {
       },
       {
         test: /.js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|src\/lib)/,
         loader: 'eslint-loader',
         enforce: 'pre'
       },
@@ -29,6 +29,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  node: {
+    fs: "empty"
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
