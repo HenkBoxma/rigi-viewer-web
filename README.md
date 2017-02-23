@@ -1,5 +1,5 @@
 # rigi-viewer-web
-Reference implementation for a web-based Rigi integration
+Reference implementation for a web-based Rigi integration.
 
 ## Overview
 
