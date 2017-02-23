@@ -76,7 +76,7 @@ As described above, when the channel is created, the client can register for not
 
 - `onStringSelected` 
   - This is called whenever the user selected a string in the Rigi preview, passing the signature of the selected string as parameter. 
-  - Please note the `onStringSelected` is not called after the client has sent the select command. 
+  - Please note the `onStringSelected` is not called after the client has sent the `select` command. 
 - `onPublishSignatures`
   - This is called whenever Rigi has detected localizable strings in the current preview. It passes an array with signatures (no duplicates) as parameter. 
    - At this point, the client may call `translateMany` to change all translations in the preview with the values currently stored in the translation tool. 
