@@ -19,20 +19,37 @@ module.exports = {
       },
       {
         test: /.js$/,
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          /.lib/
+        ],
         loader: 'eslint-loader',
         enforce: 'pre'
       },
       {
-        test: /\.(css|less)$/,
+        test: /\.css$/,
+        include: [
+          path.resolve("not_exist_path")
+        ],
         loaders: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader?minimize!less-loader!postcss-loader'
+          loader: 'css-loader?minimize!postcss-loader'
         })
       },
       {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'less-loader'
+        ]
+      },
+      {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          /.lib/
+        ],
         loaders: [
           'ng-annotate-loader',
           'babel-loader'
@@ -45,6 +62,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  node: {
+    fs: "empty"
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),

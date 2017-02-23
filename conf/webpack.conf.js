@@ -17,7 +17,10 @@ module.exports = {
       },
       {
         test: /.js$/,
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          /.lib/
+        ],
         loader: 'eslint-loader',
         enforce: 'pre'
       },
@@ -32,7 +35,10 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          /.lib/
+        ],
         loaders: [
           'ng-annotate-loader',
           'babel-loader'
@@ -45,6 +51,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  node: {
+    fs: "empty"
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),

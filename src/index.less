@@ -1,8 +1,4 @@
-
-@input-height: 2em;
-@button-height: @input-height + 0.4;
-
-html, body, #root {
+html, body {
   margin: 0;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
@@ -33,7 +29,7 @@ a {
     input {
       width: ~"calc(90% - 2px)";
       float: left;
-      height: @input-height;
+      height: 2em;
       font-size: 1.02em;
       &.disabled {
         width: 100%;
@@ -41,7 +37,7 @@ a {
     }
     button {
       width: ~"calc(10% - 4px)";
-      height: @button-height;
+      height: 2.4em;
       font-size: 1.02em;
       float: right;
       background-color: darkgreen;
