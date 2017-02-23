@@ -86,11 +86,14 @@ As described above, when the channel is created, the client can register for not
 ### Prerequisites
 
 - [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en/)
+- [Bower](https://bower.io/) (`npm install --global bower`)
 - [Gulp](http://gulpjs.com/) (`npm install --global gulp`)
 
 ### Deploy
 
-1. Run `npm install` to install all required dependencies
+1. Pull the latest code and `cd` to it in the Terminal (Command Line for Windows)
+2. Run `npm install && bower install` to install all required dependencies
 
 ### Start
 
