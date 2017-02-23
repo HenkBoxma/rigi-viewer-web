@@ -1,0 +1,71 @@
+<div class="wrapper">
+  <div class="input-group">
+    <input type="text"
+           ng-model="$ctrl.url"
+           class="form-control"
+           ng-class="{'disabled' : !($ctrl.url && $ctrl.signature) }"
+           placeholder="RIGI URL"
+    />
+    <button
+      ng-disabled="!$ctrl.signature"
+      ng-class="{'disabled' : !($ctrl.url && $ctrl.signature && !$ctrl.start)}"
+      ng-click="$ctrl.getPreview()">
+      Start
+    </button>
+  </div>
+
+  <div class="input-group">
+    <input
+      type="text"
+      placeholder="Signature"
+      ng-class="{'disabled' : !($ctrl.url && $ctrl.signature && $ctrl.start)}"
+      ng-model="$ctrl.signature"
+    />
+    <button
+      class="orange"
+      ng-class="{'disabled' : !($ctrl.url && $ctrl.signature && $ctrl.start)}"
+      ng-click="$ctrl.selectSignature()">
+      Select
+    </button>
+  </div>
+
+  <div class="input-group" ng-if="$ctrl.isLoaded && $ctrl.signature">
+    <input
+      type="text"
+      placeholder="Translation"
+      ng-model="$ctrl.translation"
+    />
+    <button class="blue" ng-click="$ctrl.translateSignature()">
+      Translate
+    </button>
+  </div>
+
+  <div class="event-log" ng-if="$ctrl.isLoaded && $ctrl.log.length">
+    <table>
+      <thead>
+      <tr>
+        <th>Time</th>
+        <th class="direction">Direction</th>
+        <th class="event">Event</th>
+        <th>Signature</th>
+      </tr>
+      </thead>
+      <tr ng-repeat="item in $ctrl.log track by $index">
+        <td>
+          {{item.time | date:"HH:mm:ss"}}
+        </td>
+        <td class="direction">
+          {{item.direction}}
+        </td>
+        <td class="event">
+          {{item.event}}
+        </td>
+        <td class="multi-line">
+          {{item.data}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

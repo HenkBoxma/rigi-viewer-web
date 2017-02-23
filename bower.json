@@ -1,0 +1,27 @@
+{
+  "name": "rigiViewerWeb",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular-ui-router": "~0.2.15",
+    "angular": "~1.5.3",
+    "jschannel": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.5.3"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/fonts/glyphicons-halflings-regular.eot",
+        "dist/fonts/glyphicons-halflings-regular.svg",
+        "dist/fonts/glyphicons-halflings-regular.ttf",
+        "dist/fonts/glyphicons-halflings-regular.woff",
+        "dist/fonts/glyphicons-halflings-regular.woff2"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "~1.5.3"
+  }
+}

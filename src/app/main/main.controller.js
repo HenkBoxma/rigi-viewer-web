@@ -1,9 +1,8 @@
-class WrapperController {
-  /** @ngInject */
-  constructor($log, $rootScope, $timeout, $window) {
+export class MainController {
+  constructor($log, $rootScope, $window) {
+    'ngInject';
     this.$log = $log;
     this.$rootScope = $rootScope;
-    this.$timeout = $timeout;
     this.$window = $window;
     this.init();
   }
@@ -78,14 +77,6 @@ class WrapperController {
       method: "translate",
       params: {signature: this.signature, translation: this.translation}
     });
-    this.logEntry('from', 'Translate', `${data.signature}-${data.translation}`, true);
+    this.logEntry('from', 'Translate', `${this.signature}-${this.translation}`, true);
   }
 }
-
-export const wrapper = {
-  template: require('./wrapper.html'),
-  controller: WrapperController,
-  bindings: {
-    projectUrl: '='
-  }
-};
