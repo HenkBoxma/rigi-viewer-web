@@ -6,10 +6,10 @@ Reference implementation for a web-based Rigi integration
 Rigi provides an API for the integration with web-based translation tools. For that, the translation tool needs to
 
 - Open the view for external tools in a popup window or iFrame
-  - The URL is https://<servername>.rigi.io/projects/<projectID>/context/signature/<signature>
-  - <servername> is the subdomain of the rigi server. 
-  - <projectID> is the unique ID of the target project
-  - <signature> is a hash value of the string ID that needs to be translated (or reviewed) in context. 
+  - The URL is `https://<servername>.rigi.io/projects/<projectID>/context/signature/<signature>`
+  - `<servername>` is the subdomain of the rigi server. 
+  - `<projectID>` is the unique ID of the target project
+  - `<signature>` is a hash value of the string ID that needs to be translated (or reviewed) in context. 
   - The URL is also part of Rigi XML and XLIFF exported by the server. 
 - Connect to and communicate with the window via jsChannel. 
   - jsChannel is an abstraction on top of the HTML5 postMessage() API. 
