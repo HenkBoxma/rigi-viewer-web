@@ -11,8 +11,8 @@ Rigi provides an API for the integration with web-based translation tools. For t
   - `<projectID>` is the unique ID of the target project
   - `<signature>` is a hash value of the string ID that needs to be translated (or reviewed) in context. 
   - The URL is also part of Rigi XML and XLIFF exported by the server. 
-- Connect to and communicate with the window via jsChannel. 
-  - jsChannel is an abstraction on top of the HTML5 postMessage() API. 
+- Connect to and communicate with the window via `jsChannel`. 
+  - `jsChannel` is an abstraction on top of the HTML5 `postMessage()` API. 
   - It is available as an open-source library: https://github.com/mozilla/jschannel
 - The translation tool can then exchange messages with the Rigi application through this channel. Please refer to the Channel API below.
 
