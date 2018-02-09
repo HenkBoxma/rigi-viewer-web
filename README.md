@@ -55,19 +55,19 @@ It is possible to change translations in the Rigi preview in real-time.
 
 	channel.notify({
       method: "translate",
-      params: { signature: "1234", translation: "Hello world!" }
+      params: { signature: "1234", source: "Hello world!", translation: "Hallo Welt!" }
     });
 
-This can be called when the user is typing in a translation or when all translations in the current preview should be changed. 
+This can be called when the user is typing in a translation or when all translations in the current preview should be changed. Note that the `source` parameter is optional. 
 
 To change multiple translations in a single call, use `translateMany`: 
 
 	channel.notify({
       method: "translateMany",
-      params: { translations: [
-        {signature: "1234": "translation": "test"}, 
-        {signature: "5678": "translation": "test2"}, 
-      ]}
+      params: { [
+        { signature: "1234": "source": "source_text", "translation": "target_text" }, 
+        { signature: "5678": "source": "source_text", "translation": "target_text" } 
+      ]
     });
 
 ### Get notifications 
