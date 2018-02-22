@@ -70,6 +70,16 @@ To change a single translations, call `translate`. (Note that this notification 
       params: { signature: "1234", source: "Hello world!", translation: "Hallo Welt!" }
     });
 
+### Take screenshot 
+
+Click on button `Take screenshot` calls takeScreenshot on API Channel
+
+	channel.notify({
+	  method: "takeScreenshot",
+	  params: {}
+	});
+
+
 ### Get notifications 
 
 As described above, when the channel is created, the client can register for notifications. 
@@ -80,7 +90,9 @@ As described above, when the channel is created, the client can register for not
 - `onPublishSignatures`
   - This is called whenever Rigi has detected localizable strings in the current preview. It passes an array with signatures (no duplicates) as parameter. 
    - At this point, the client may call `translateMany` to change all translations in the preview with the values currently stored in the translation tool. 
-
+- `onScreenshotFinished` 
+  - This is called after screenshot upload finished 
+  
 ## How to run the sample application
 
 ### Prerequisites

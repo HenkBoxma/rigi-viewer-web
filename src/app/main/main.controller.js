@@ -38,6 +38,9 @@ export class MainController {
         channel.bind("onPublishSignatures", (trans, signatures) => {
           this.logEntry('from', 'OnPublishSignatures', signatures, true);
         });
+        channel.bind("onScreenshotFinished", (trans, data) => {
+          this.logEntry('from', 'onScreenshotFinished', 'finished', true);
+        });
       },
       onError: err => this.$log.err(err)
     });
@@ -78,5 +81,12 @@ export class MainController {
       params: {signature: this.signature, translation: this.translation}
     });
     this.logEntry('from', 'Translate', `${this.signature}-${this.translation}`, true);
+  }
+  takeScreenshot(){
+    this.logEntry('to', 'takeScreenshot', this.signature);
+    this.channel.notify({
+      method: "takeScreenshot",
+      params: {}
+    });
   }
 }

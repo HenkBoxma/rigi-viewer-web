@@ -33,10 +33,18 @@
     <input
       type="text"
       placeholder="Translation"
-      ng-model="$ctrl.translation"
+      ng-disabled="true"
     />
-    <button class="blue" ng-click="$ctrl.translateSignature()">
+    <button class="blue"
+            ng-class="{'disabled' : !($ctrl.url && $ctrl.signature && $ctrl.start)}"
+            ng-click="$ctrl.translateSignature()">
       Translate
+    </button>
+  </div>
+
+  <div class="input-group" ng-if="$ctrl.isLoaded && $ctrl.signature">
+    <button class="blue" ng-click="$ctrl.takeScreenshot()">
+      Take screenshot
     </button>
   </div>
 
