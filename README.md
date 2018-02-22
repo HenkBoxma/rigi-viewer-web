@@ -72,7 +72,7 @@ To change a single translations, call `translate`. (Note that this notification 
 
 ### Take screenshot 
 
-Click on button `Take screenshot` calls takeScreenshot on API Channel
+In live mode, it is possible to programatically take a screenshot using the channel API. The screenshot is automatically uploaded to the server:  
 
 	channel.notify({
 	  method: "takeScreenshot",
