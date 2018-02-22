@@ -33,7 +33,6 @@
     <input
       type="text"
       placeholder="Translation"
-      ng-disabled="true"
     />
     <button class="blue"
             ng-class="{'disabled' : !($ctrl.url && $ctrl.signature && $ctrl.start)}"
@@ -43,6 +42,11 @@
   </div>
 
   <div class="input-group" ng-if="$ctrl.isLoaded && $ctrl.signature">
+    <input
+      type="text"
+      placeholder="Screenshot"
+      ng-disabled="true"
+    />
     <button class="blue" ng-click="$ctrl.takeScreenshot()">
       Take screenshot
     </button>
